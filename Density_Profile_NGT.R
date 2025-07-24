@@ -9,11 +9,11 @@ library(dplyr)
 library(viridis)  # for scale_color_viridis_d()
 library(ggplot2)
 library(patchwork)
-source("C:/Users/maili/Documents/Bachelorarbeit/FirnR/R/DensityHL.R")
+source("your_filepath/FirnR/R/DensityHL.R")
 #-----------------------------------------------
 # read in data with temperature and accumulation rate for all sites
 climdata <- read.csv(
-  "C:/Users/maili/Documents/Bachelorarbeit/NGT_rechnungen/climatePar.csv",
+  "your_filepath/climatePar.csv",
   header = TRUE,
   stringsAsFactors = FALSE
 )

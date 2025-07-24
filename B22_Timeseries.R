@@ -11,7 +11,7 @@ melt_layers_24 <- data.frame(pos = c(23.314, 23.174))
 #--------------------------------------------------------------------
 # read in CFA Data from B22 core
 B22_cfa_data <- read.csv(
-  "C:\\Users\\maili\\Documents\\Bachelorarbeit\\Isotopendaten\\B22_CFA\\ExNGT_B22_Full-core_processed_cleaned_vs_NOT-cleaned_070425(2)(ExNGT_B22_039_002_online data).csv",
+  "your_filepath//ExNGT_B22_Full-core_processed_cleaned_vs_NOT-cleaned_070425(2)(ExNGT_B22_039_002_online data).csv",
   skip = 1,
   header = TRUE,
   fileEncoding = "latin1"
@@ -86,14 +86,14 @@ B22_data_16 <- read.csv2(
 
 # read in Bag 17
 B22_data_17 <- read.csv2(
-  "C:/Users/maili/Documents/Bachelorarbeit/Isotopendaten/B22_1cm/Probenliste_ExNGTB22_diskrete_melttest_mbeh(ExNGTB22 Bag 17).csv",
+  "your_filepath/Probenliste_ExNGTB22_diskrete_melttest_mbeh(ExNGTB22 Bag 17).csv",
   header = TRUE,
   row.names = NULL
 )
 
 # read in Bag 24
 B22_data_24 <- read.csv2(
-  "C:/Users/maili/Documents/Bachelorarbeit/Isotopendaten/B22_1cm/Probenliste_ExNGTB22_diskrete_melttest_mbeh(ExNGTB22 Bag 24).csv",
+  "your_filepath/Probenliste_ExNGTB22_diskrete_melttest_mbeh(ExNGTB22 Bag 24).csv",
   header = TRUE,
   row.names = NULL,
   fileEncoding = "latin1"
@@ -223,7 +223,7 @@ bag1617_plot <- ggplot(bag1617_combined, aes(x = depth, y = d18O, color = type))
 print(bag1617_plot)
 print(bag24_plot)
 #----------------------------------------------------------------------
-# save plots
+# save plots as pdf and png
 ggsave(
   filename = paste0("plots/", "B22_Bag1617timeseries.pdf"),
   plot = bag1617_plot,

@@ -1,6 +1,6 @@
 ### calculate rho.s
 
-density_data <- read.table("C:/Users/maili/Documents/Bachelorarbeit/Isotopendaten/Schaller_2016/datasets/N2E_density.tab", 
+density_data <- read.table("your_filepath/N2E_density.tab", 
                    skip = 38, header = TRUE, sep = "\t")
 
 # calculate mean density (7. column  = density)

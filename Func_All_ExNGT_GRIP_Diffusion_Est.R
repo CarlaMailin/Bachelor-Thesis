@@ -1,5 +1,5 @@
 ###########
-#' Function estimates diffusion length of d18O for exNGT-2019 cores in a given depth interval
+#' Function estimates diffusion length of d18O for exNGT-2019 and exNGT-2012 cores in a given depth interval
 #' Estimation and spectrum calculation methods and functions used from Shaw et al. "Novel approach to estimate the water isotope diffusion length in  deep ice cores with an application to Marine Isotope Stage 19  in the Dome C ice core" (doi.org/10.5194/tc-18-3685-2024)
 #' 
 #' ---------------------------------------------------------------

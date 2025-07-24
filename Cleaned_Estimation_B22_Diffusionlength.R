@@ -1,5 +1,5 @@
 #####
-#' This estimates the diffusionlength for the B22 core with isotope data obtained with CFA measurements, which include "cleaned" and "not cleaned" data - where all data that results in a loss of signal was removed
+#' This estimates the diffusion length for the B22 core with isotope data obtained with CFA measurements, which include "cleaned" and "not cleaned" data - where all data that results in a loss of signal was removed
 
 #-------------------------------------
 #import packages
@@ -8,15 +8,15 @@ library(dplyr)
 library(cmdstanr)
 library(posterior)
 library(ggplot2)
-source("C:/Users/maili/Documents/Bachelorarbeit/IceDiffusionTools-main/all_functions.R")
-source("C:/Users/maili/Documents/Bachelorarbeit/paleospec-master/paleospec-master/R/gg_spec_depth.R") # ggspec with renamed axis
-source("C:/Users/maili/Documents/Bachelorarbeit/paleospec-master/paleospec-master/R/MakeEquidistant_ts_depth.R") # added a return of the depth in MakeEquidistant
+source("your_filepath/IceDiffusionTools-main/all_functions.R")
+source("your_filepath/paleospec-master/paleospec-master/R/gg_spec_depth.R") # ggspec with renamed axis
+source("your_filepath/paleospec-master/paleospec-master/R/MakeEquidistant_ts_depth.R") # added a return of the depth in MakeEquidistant
 #-------------------------------------------------------
 # define path for fitting model from Ice Diffusion Tools
-diffusion_length_path <- "C:/Users/maili/Documents/Bachelorarbeit/IceDiffusionTools-main/diffusion_length_fit.stan"
+diffusion_length_path <- "Cyour_filepath/IceDiffusionTools-main/diffusion_length_fit.stan"
 #------------------------------------------------------
 # read in isotopedata
-cleaned_B22_data <- read.csv("C:\\Users\\maili\\Documents\\Bachelorarbeit\\Isotopendaten\\B22_CFA\\ExNGT_B22_Full-core_processed_cleaned_vs_NOT-cleaned_070425(2)(ExNGT_B22_039_002_online data).csv",
+cleaned_B22_data <- read.csv("your_filepath/ExNGT_B22_Full-core_processed_cleaned_vs_NOT-cleaned_070425(2)(ExNGT_B22_039_002_online data).csv",
                      skip = 1, header = TRUE,  fileEncoding = "latin1"
                      , check.names = TRUE, stringsAsFactors = FALSE    )
 #names(B22_data) <- make.names(names(B22_data), unique = TRUE) # assign names 

@@ -16,13 +16,13 @@ library(dplyr)
 library(ggplot2)
 library(viridis)
 library(patchwork)
-source("C:/Users/maili/Documents/Bachelorarbeit/FirnR/R/DensityHL.R")
-source("C:/Users/maili/Documents/Bachelorarbeit/FirnR/R/Diffusivity.R")
-source("C:/Users/maili/Documents/Bachelorarbeit/FirnR/R/DiffusionLength.R")
+source("your_filepath/FirnR/R/DensityHL.R")
+source("your_filepath/FirnR/R/Diffusivity.R")
+source("your_filepath/FirnR/R/DiffusionLength.R")
 #-----------------------------------------------------------------------
 # read in Data, compiled using exNGT package
 climdata <- read.csv(
-  "C:/Users/maili/Documents/Bachelorarbeit/NGT_rechnungen/climatePar.csv",
+  "your_filepath/climatePar.csv",
   header = TRUE,
   stringsAsFactors = FALSE
 )
@@ -157,6 +157,7 @@ elevation_df <- bind_rows(
   })
 )
 print(elevation_df)
+
 # add duplicate values for exNGT, so site column can be used later for different data of the same cores
 dup_map <- tibble::tibble(
   original = c("B27.28", "B22", "B16", "B22", "B18", "B21", "B23", "B26", "B22"),
@@ -196,7 +197,7 @@ diff_length_plot <- ggplot(filtered_sigma_site_df, aes(y = sigma.d18O, x = depth
 
 print(diff_length_plot)
 
-
+# save plots
 ggsave(
   filename = paste0("plots/", "diffusionprofiles.pdf"),
   plot = diff_length_plot,
@@ -251,7 +252,7 @@ p1 <- ggplot(filtered_sigma_site_df, aes(x = depth, y = sigma.d18O, group = site
   )+
   theme(legend.position = "right")
 
-# Label plot
+# label plot
 p2 <- ggplot(site_labels, aes(y = label_y)) +
   geom_point(aes(x = 1, color = elevation), size = 4) +
   geom_text(aes(x = 1.1, label = site_i), color = "black", hjust = 0, size = 4) +
@@ -261,10 +262,11 @@ p2 <- ggplot(site_labels, aes(y = label_y)) +
   theme_void() +
   coord_cartesian(clip = "off")
 
-# Combine
+# Combine plot and label plot
 elevation_diffusivity_plot <- p1 + p2 + plot_layout(widths = c(4, 2))
 print(elevation_diffusivity_plot)
 
+# save plot as pdf
 ggsave(
   filename = paste0("plots/", "elevation_diffusivity.pdf"),
   plot = elevation_diffusivity_plot,

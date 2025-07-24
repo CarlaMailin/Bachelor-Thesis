@@ -9,17 +9,17 @@ library(PaleoSpec)
 library(dplyr)
 library(cmdstanr)
 library(posterior)
-source("C:/Users/maili/Documents/Bachelorarbeit/IceDiffusionTools-main/all_functions.R")
-source("C:/Users/maili/Documents/Bachelorarbeit/NGT_rechnungen/Func_All_ExNGT_GRIP_Diffusion_Est.R")
-source("C:/Users/maili/Documents/Bachelorarbeit/NGT_rechnungen/Calc_Firn_Diffusion_Length.R") # have to manually set depth range still for calculated one in Estimations_Firn_Diffusion_Length
-source("C:/Users/maili/Documents/Bachelorarbeit/paleospec-master/paleospec-master/R/gg_spec_depth.R") # ggspec with renamed axis
-source("C:/Users/maili/Documents/Bachelorarbeit/paleospec-master/paleospec-master/R/MakeEquidistant_ts_depth.R") # added a return of the depth in MakeEquidistant
+source("your_filepath/IceDiffusionTools-main/all_functions.R")
+source("your_filepath/Func_All_ExNGT_GRIP_Diffusion_Est.R")
+source("your_filepath/Calc_Firn_Diffusion_Length.R") # have to manually set depth range still for calculated one in Estimations_Firn_Diffusion_Length
+source("your_filepath/paleospec-master/paleospec-master/R/gg_spec_depth.R") # ggspec with renamed axis
+source("your_filepath/paleospec-master/paleospec-master/R/MakeEquidistant_ts_depth.R") # added a return of the depth in MakeEquidistant
 #-------------------------------------------------------
 # define path for fitting model from Ice Diffusion Tools
-diffusion_length_path <- "C:/Users/maili/Documents/Bachelorarbeit/IceDiffusionTools-main/diffusion_length_fit.stan"
+diffusion_length_path <- "your_filepath/IceDiffusionTools-main/diffusion_length_fit.stan"
 #------------------------------------------------------
 # define folder path where Isotope data is
-folder_path <- "C:/Users/maili/Documents/Bachelorarbeit/Isotopendaten/all_exNGT"
+folder_path <- "your_filepath/Isotopendaten/all_exNGT"
 
 # List all .tab files in the folder
 ALL_NGT_files <- list.files(folder_path, pattern = "\\.csv$", full.names = TRUE)

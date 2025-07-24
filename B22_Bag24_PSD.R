@@ -1,10 +1,6 @@
 
-
-
-
-
 #####
-#' This estimates the diffusionlength for the Bag24 core with isotope data obtained with CFA measurements, which include "cleaned" and "not cleaned" data - where all data that results in a loss of signal was removed
+#' This estimates the diffusion length for the Bag24 core with isotope data obtained with CFA measurements, which include "cleaned" and "not cleaned" data - where all data that results in a loss of signal was removed
 
 #-------------------------------------
 #import packages
@@ -13,16 +9,16 @@ library(dplyr)
 library(cmdstanr)
 library(posterior)
 library(ggplot2)
-source("C:/Users/maili/Documents/Bachelorarbeit/IceDiffusionTools-main/all_functions.R")
-source("C:/Users/maili/Documents/Bachelorarbeit/paleospec-master/paleospec-master/R/gg_spec_depth.R") # ggspec with renamed axis
-source("C:/Users/maili/Documents/Bachelorarbeit/paleospec-master/paleospec-master/R/MakeEquidistant_ts_depth.R") # added a return of the depth in MakeEquidistant
+source("your_filepath/IceDiffusionTools-main/all_functions.R")
+source("your_filepath/paleospec-master/paleospec-master/R/gg_spec_depth.R") # ggspec with renamed axis
+source("your_filepath/paleospec-master/paleospec-master/R/MakeEquidistant_ts_depth.R") # added a return of the depth in MakeEquidistant
 #-------------------------------------------------------
 # define path for fitting model from Ice Diffusion Tools
-diffusion_length_path <- "C:/Users/maili/Documents/Bachelorarbeit/IceDiffusionTools-main/diffusion_length_fit.stan"
+diffusion_length_path <- "your_filepath/IceDiffusionTools-main/diffusion_length_fit.stan"
 #------------------------------------------------------
 # read in isotopedata
 Bag24_data_24 <- read.csv2(
-  "C:/Users/maili/Documents/Bachelorarbeit/Isotopendaten/B22_1cm/Probenliste_ExNGTB22_diskrete_melttest_mbeh(ExNGTB22 Bag 24).csv",
+  "your_filepath/Probenliste_ExNGTB22_diskrete_melttest_mbeh(ExNGTB22 Bag 24).csv",
   header = TRUE,
   row.names = NULL,
   fileEncoding = "latin1"

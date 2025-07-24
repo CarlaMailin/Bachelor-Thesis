@@ -9,12 +9,12 @@ library(ggplot2)
 library(dplyr)
 library(viridis)
 
-# load in calculated and estimated Diffusionlengths
-source("C:/Users/maili/Documents/Bachelorarbeit/NGT_rechnungen/Calc_Firn_Diffusion_Length.R")
-source("C:/Users/maili/Documents/Bachelorarbeit/NGT_rechnungen/ALL_ExNGT_GRIP_Diffusion_Est.R")
-source("C:/Users/maili/Documents/Bachelorarbeit/NGT_rechnungen/Cleaned_Estimation_B22_Diffusionlength.R")
-source("C:/Users/maili/Documents/Bachelorarbeit/NGT_rechnungen/B22_Bag24_PSD.R")
-source("C:/Users/maili/Documents/Bachelorarbeit/NGT_rechnungen/Estimation_B22_Diffusionlength.R")
+# load in calculated and estimated diffusion lengths
+source("your_filepath/Calc_Firn_Diffusion_Length.R")
+source("your_filepath/NGT_rechnungen/ALL_ExNGT_GRIP_Diffusion_Est.R")
+source("your_filepath/Cleaned_Estimation_B22_Diffusionlength.R")
+source("your_filepath/B22_Bag24_PSD.R")
+source("your_filepath/Estimation_B22_Diffusionlength.R")
 #----------------------------------------------------
 # define calculated sigma and rename columns to use later
 sim_sig <- mean.calc.sig_df %>%
